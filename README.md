@@ -1,2 +1,2 @@
-# PonderosaPine-BinaryClassification
+# PonderosaPine-Binary Classification
 kaggle_Forest Cover Type Prediction
