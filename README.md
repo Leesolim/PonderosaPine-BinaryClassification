@@ -50,10 +50,13 @@
 
 
 - 표본 선정
-    - 원본 데이터는 루즈벨트 국유림 4개 지역(Rawah/ Neota / Comanche Peak/ Cache la Poudre Wilderness Area)으로 구성되어 있으나, 본 연구에서 필요한 폰데로사 소나무의 경우 2개 지역(Comanche Peak/ Cache la Poudre Wilderness Area)에서만 자라고 있으므로 2개 지역에 대해서만 머신러닝을 진행
-    - 원본 데이터 관측치 : 581,012개 / 프로젝트 데이터 표본 : 290,332개
-    - 중복치와 결측치는 확인 결과 없음
-    - 이상치는 수치데이터는 boxplot을 통한 검토를 통하여 제거하지 않기로 결정
+    - 원본 데이터 관측치(581,012개)
+        - 루즈벨트 국유림 4개 지역(Rawah/ Neota / Comanche Peak/ Cache la Poudre Wilderness Area)으로 구성
+        - 30m x 30m 면적을 기준으로 나무 종류 식별
+    - 프로젝트 데이터 관측치(290,332개)
+        - 본 연구에서 필요한 폰데로사 소나무의 경우 2개 지역(Comanche Peak/ Cache la Poudre Wilderness Area)에서만 자라고 있으므로 2개 지역에 대해서만 머신러닝을 진행
+        - 중복치와 결측치는 확인 결과 없음
+        - 이상치는 수치데이터는 boxplot을 통한 검토를 통하여 제거하지 않기로 결정
 -----
 
 ### 분류모델 학습 및 성능 확인
