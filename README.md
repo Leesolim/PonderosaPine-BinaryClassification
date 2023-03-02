@@ -60,12 +60,14 @@
 -----
 
 ### 분류모델 학습 및 성능 확인
-- 분석 기법
-    - 폰데로사 소나무 여부를 확인하는 이진 분류 문제로 트리기반 모델을 학습
+- 분석 기법 : 폰데로사 소나무 여부를 확인하는 이진 분류 문제로 트리기반 모델을 학습
+    - 분류 모델 및 활용할 파이썬 라이브러리
+        - 최빈값 기준 모델(accuracy_score) : scikit-learn
+        - 결정트리 모델 : scikit-learn
+        - 랜덤포레스트 모델 : scikit-learn
+        - 그레디언트 부스팅 모델 : xgboost
+    - 3 way hold-out 검증을 위해 데이터 분리 : train data(163,311개), validation data(54,438개), test data(72,583개)
     - 타겟 데이터(Yes : 0.123, No : 0.877)는 불균형 데이터이므로 하이퍼 파라미터를 조정하여 모델을 학습함(class_weight, scale_pos_weight)
-    - 최빈값 기준 모델(accuracy_score) : scikit-learn
-    - 결정트리 모델, 랜덤포레스트 모델 : scikit-learn
-    - 그레디언트 부스팅 모델 : xgboost
 
 
 - 모델 학습 성능 확인
