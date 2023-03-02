@@ -71,7 +71,7 @@
 - 모델 학습 성능 확인
     - 평가지표(Accuracy, Precision, Recall, F1-score)에서 우수성을 나타낸 Gradient Boosting 모델 선택
         
-         | 분류평가지표 | 기준모델 | Decision Tree | Random Forest | Gradient Boosting |    
+         | 분류평가지표 | 최빈값 기준모델 | Decision Tree | Random Forest | Gradient Boosting |    
          |:---:|:---:|:---:|:---:|:---:|     
          |Accuracy|0.88|0.97|0.98|0.99|    
          |Precision|0|0.87|0.90|0.94|    
