@@ -49,7 +49,7 @@
         - 7 - Krummholz(작은 나무숲)
 
 
-- 표본 선정
+- 데이터 선정
     - 원본 데이터 관측치(581,012개)
         - 루즈벨트 국유림 4개 지역(Rawah/ Neota / Comanche Peak/ Cache la Poudre Wilderness Area)으로 구성
         - 30m x 30m 면적을 기준으로 나무 종류 식별
