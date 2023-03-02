@@ -83,7 +83,7 @@
          ![image01](https://user-images.githubusercontent.com/109954540/222321865-aa46b198-0c8b-4f6c-b896-9286dc782433.png)
 
     - 베이지안 튜닝을 통하여 Gradient Boosting 모델의 성능을 개선하고 일반화 성능을 테스트함
-         | 분류평가지표 | 개선 전(검증 데이터) | 개선 후(검증 데이터) | 일반화(테스트 데이터) |  
+         | 분류평가지표 | 개선 전(validataion data) | 개선 후(validataion data) | 일반화(test data) |
          |:---:|:---:|:---:|:---:|     
          |Accuracy|0.99|0.99|0.99|    
          |Precision|0.94|0.95|0.96|    
