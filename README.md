@@ -13,7 +13,7 @@
 ### 프로젝트 진행 과정
 - 데이터 전처리 : pandas, numpy
 - 머신러닝 분류 모델 학습학습 및 성능 확인 
-    - 기준 모델(accuracy_score) : scikit-learn
+    - 최빈값 기준 모델(accuracy_score) : scikit-learn
     - 결정트리 모델, 랜덤포레스트 모델 : scikit-learn
     - 그레디언트 부스팅 모델 : xgboost
 - 모델해석
@@ -60,19 +60,55 @@
 -----
 
 ### 분류모델 학습 및 성능 확인
+- 분석 기법
+    - 폰데로사 소나무 여부를 확인하는 이진 분류 문제로 트리기반 모델을 학습
+    - 타겟 데이터(Yes : 0.123, No : 0.877)는 불균형 데이터이므로 하이퍼 파라미터를 조정하여 모델을 학습함(class_weight, scale_pos_weight)
+    - 최빈값 기준 모델(accuracy_score) : scikit-learn
+    - 결정트리 모델, 랜덤포레스트 모델 : scikit-learn
+    - 그레디언트 부스팅 모델 : xgboost
 
 
+- 모델 학습 성능 확인
+    - 평가지표(Accuracy, Precision, Recall, F1-score)에서 우수성을 나타낸 Gradient Boosting 모델 선택
+        
+         | 분류평가지표 | 기준모델 | Decision Tree | Random Forest | Gradient Boosting |    
+         |:---:|:---:|:---:|:---:|:---:|     
+         |Accuracy|0.88|0.97|0.98|0.99|    
+         |Precision|0|0.87|0.90|0.94|    
+         |Recall|0|0.93|0.96|0.97|    
+         |F1-score|0|0.90|0.93|0.95|    
 
+- 모델 성능 개선 및 일반화 성능확인
+    - 숲 조성에는 많은 시간과 비용이 발생하므로, Yes(1)라고 예측했는데 실제로는 No(0)인 경우가 치명적인 오류라고 판단
+         ![image01](https://user-images.githubusercontent.com/109954540/222321865-aa46b198-0c8b-4f6c-b896-9286dc782433.png)
+
+    - 베이지안 튜닝을 통하여 Gradient Boosting 모델의 성능을 개선하고 일반화 성능을 테스트함
+         | 분류평가지표 | 개선 전(검증 데이터) | 개선 후(검증 데이터) | 일반화(테스트 데이터) |  
+         |:---:|:---:|:---:|:---:|     
+         |Accuracy|0.99|0.99|0.99|    
+         |Precision|0.94|0.95|0.96|    
+         |Recall|0.97|0.97|0.98|    
+         |F1-score|0.95|0.96|0.97|
+----
+### 결과 정리(가설검정 및 모델 해석)
+   ![image](https://user-images.githubusercontent.com/109954540/222322451-cd95c4cd-5639-4884-b88a-2613305ae41b.png)
+   ![image](https://user-images.githubusercontent.com/109954540/222322988-163838bf-2e02-4c62-92a8-673e4db47684.png)
+   ![image](https://user-images.githubusercontent.com/109954540/222323002-1850d8d1-fb3d-4cbb-af99-90fbcf4ddded.png)
+    
+- 폰데로사 소나무의 생육환경
+    - 루즈벨트 국유림 : Comanche Peak/ Cache la Poudre Wilderness Area
+    - 고도
+        - 2000m~2800m이하까지 생가능
+        - 2100m ~ 2500m까지의 높이를 가장 선호
+    - 토양
+        - Soil_Type(1, 2, 3, 4, 5, 6, 10, 11, 12, 14, 16, 17)에서 생육 가능
+        - Type2(Vanet - Ratake families), Type 4(Ratake family)의 토양 선호
 
 ----
-### 모델 해석
-
-
-
-----
-### 한계점 및 해결방법
-
-
+### 프로젝트 한계점
+- 머신러닝의 예측 성능이 너무 높으므로 정보 누수 여부를 확인할 필요가 있음
+- 해외 데이터이므로 우리나라 구상나무에 적용하는 것에는 한계가 있음 
+- 미래의 생육환경까지 고려하여 산림조성 계획 수립 및 의사결정에 활용하기 위해서는 기후 변화 예측 데이터까지 고려가 필요
 
 
 
