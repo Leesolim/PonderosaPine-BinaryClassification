@@ -12,7 +12,7 @@
 ----
 ## 프로젝트 진행 과정
 - 데이터 전처리 : pandas, numpy
-- 머신러닝 분류 모델 학습학습 및 성능 확인 
+- 머신러닝 분류 모델 학습 및 성능 확인 
     - 최빈값 기준 모델(accuracy_score) : scikit-learn
     - 결정트리 모델, 랜덤포레스트 모델 : scikit-learn
     - 그레디언트 부스팅 모델 : xgboost
